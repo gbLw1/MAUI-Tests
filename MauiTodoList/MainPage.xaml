@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+    x:Class="MauiTodoList.MainPage"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:models="clr-namespace:MauiTodoList.Models"
+    xmlns:viewmodel="clr-namespace:MauiTodoList.ViewModel"
+    x:DataType="viewmodel:MainViewModel">
+
+    <!--
+        Layout: 3 linhas 2 colunas
+        
+        ↓ Rows ↓
+        Primeira linha: 100px de altura,
+        segunda linha: Auto (somente o espaço dos componentes),
+        terceira linha: preenche com todo o espaço restante
+        
+        ↓ Columns ↓
+        Primeira coluna: 75% da largura da tela,
+        segunda coluna: 25% da largura da tela
+    -->
+    <Grid
+        Padding="10"
+        ColumnDefinitions=".75*, .25*"
+        ColumnSpacing="10"
+        RowDefinitions="100, Auto, *"
+        RowSpacing="10">
+
+        <Image
+            Grid.ColumnSpan="2"
+            BackgroundColor="Transparent"
+            Source="logo" />
+
+        <Entry
+            Grid.Row="1"
+            Placeholder="Enter task"
+            Text="{Binding Text}" />
+
+        <BoxView
+            Grid.Row="1"
+            BackgroundColor="Gray"
+            HeightRequest="0.8"
+            VerticalOptions="End" />
+
+        <Button
+            Grid.Row="1"
+            Grid.Column="1"
+            Command="{Binding AddCommand}"
+            Text="Add" />
+
+        <CollectionView
+            Grid.Row="2"
+            Grid.ColumnSpan="2"
+            ItemsSource="{Binding Todos}"
+            SelectionMode="None">
+
+            <CollectionView.ItemTemplate>
+                <DataTemplate x:DataType="models:Todo">
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItems>
+                                <SwipeItem
+                                    BackgroundColor="Red"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=DeleteCommand}"
+                                    CommandParameter="{Binding .}"
+                                    IconImageSource="trash"
+                                    Text="Delete" />
+                            </SwipeItems>
+                        </SwipeView.RightItems>
+                        <Grid Margin="0,5">
+                            <Frame CornerRadius="0">
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Command="{Binding Source={RelativeSource AncestorType={x:Type viewmodel:MainViewModel}}, Path=TapCommand}" CommandParameter="{Binding Id}" />
+                                </Frame.GestureRecognizers>
+                                <Label FontSize="24" Text="{Binding Description}" />
+                            </Frame>
+                        </Grid>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+
+        </CollectionView>
+
+    </Grid>
+
+</ContentPage>
