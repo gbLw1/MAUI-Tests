@@ -3,18 +3,19 @@
     x:Class="MauiTodoList.AppShell"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    xmlns:local="clr-namespace:MauiTodoList"
-    Shell.FlyoutBehavior="Flyout">
+    xmlns:local="clr-namespace:MauiTodoList">
+    <!--  Shell.FlyoutBehavior="Flyout">  -->
 
-    <ShellContent
-        Title="Home"
-        ContentTemplate="{DataTemplate local:MainPage}"
-        Route="MainPage" />
+    <FlyoutItem Title="Home" Icon="task.png">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:MainPage}" Route="MainPage" />
+        </Tab>
+    </FlyoutItem>
 
-    <ShellContent
-        Title="Error example (404)"
-        ContentTemplate="{DataTemplate local:DetailPage}"
-        Route="DetailPage" />
-
+    <FlyoutItem Title="Error example (404)" Icon="error.png">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:DetailPage}" Route="DetailPage" />
+        </Tab>
+    </FlyoutItem>
 
 </Shell>
