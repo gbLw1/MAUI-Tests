@@ -5,7 +5,8 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:models="clr-namespace:MauiTodoList.Models"
     xmlns:viewmodel="clr-namespace:MauiTodoList.ViewModel"
-    x:DataType="viewmodel:MainViewModel">
+    x:DataType="viewmodel:MainViewModel"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
 
     <!--
         Layout: 3 linhas 2 colunas
