@@ -10,46 +10,47 @@ MAUI é a abreviação de .NET Multi-platform App UI, que é um framework de des
 
 ## Telas da aplicação
 
-![Splash](./docs/screenshots/splash.png)
+![Splash](./docs/screenshots/splash.png)  
 (Splash Screen da aplicação)
   
 ---
 
-![Home](./docs/screenshots/home.png)
+![Home](./docs/screenshots/home.png)  
 (Tela inicial da aplicação)
 
 ---
 
-![Menu](./docs/screenshots/menu.png)
+![Menu](./docs/screenshots/menu.png)  
+(Menu da aplicação)
 
 ---
 
-![Error - input empty](./docs/screenshots/error-input-empty.png)
+![Error - input empty](./docs/screenshots/error-input-empty.png)  
 (Tela de erro ao tentar adicionar uma tarefa sem título)
 
 ---
 
-![Error - no internet connection](./docs/screenshots/error-no-internet-connection.png)
+![Error - no internet connection](./docs/screenshots/error-no-internet-connection.png)  
 (Tela de erro ao tentar adicionar uma tarefa sem conexão com a internet)
 
 ---
 
-![Add task](./docs/screenshots/add-task.png)
+![Add task](./docs/screenshots/add-task.png)  
 (Tarefa adicionada com sucesso)
 
 ---
 
-![Details page](./docs/screenshots/details-page.png)
+![Details page](./docs/screenshots/details-page.png)  
 (Página de detalhes de uma tarefa)
 
 ---
 
-![Swipe to delete](./docs/screenshots/swipe-to-delete.png)
+![Swipe to delete](./docs/screenshots/swipe-to-delete.png)  
 (Deslizar para deletar uma tarefa)
 
 ---
 
-![Delete task](./docs/screenshots/delete-task.png)
+![Delete task](./docs/screenshots/delete-task.png)  
 (Modal de confirmação para deletar uma tarefa)
 
 ---
