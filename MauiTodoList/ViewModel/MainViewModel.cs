@@ -31,13 +31,9 @@ namespace MauiTodoList.ViewModel;
 
 public partial class MainViewModel : ObservableObject
 {
-    IConnectivity connectivity;
-
-    public MainViewModel(IConnectivity connectivity)
+    public MainViewModel()
     {
         Todos = new();
-
-        this.connectivity = connectivity;
     }
 
     [ObservableProperty]
@@ -68,13 +64,7 @@ public partial class MainViewModel : ObservableObject
     {
         if (string.IsNullOrWhiteSpace(Text))
         {
-            await Shell.Current.DisplayAlert("Ops", "You need to type something", "OK");
-            return;
-        }
-
-        if (connectivity.NetworkAccess != NetworkAccess.Internet)
-        {
-            await Shell.Current.DisplayAlert("Uh Oh!", "No internet", "OK");
+            await Shell.Current.DisplayAlert("Ops", "Você precisa digitar algo para adicionar", "Ok");
             return;
         }
 
@@ -91,7 +81,7 @@ public partial class MainViewModel : ObservableObject
     [RelayCommand]
     async Task Delete(Todo todoModel)
     {
-        var result = await Shell.Current.DisplayAlert("Delete", $"Are you sure you wanna delete \"{todoModel.Description}\"?", "Yes", "No");
+        var result = await Shell.Current.DisplayAlert("Delete", $"Você tem certeza que deseja deletar \"{todoModel.Description}\"?", "Sim", "Não");
 
         if (!result)
         {

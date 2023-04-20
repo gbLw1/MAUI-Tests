@@ -26,6 +26,9 @@ public static class MauiProgram
         builder.Services.AddTransient<DetailPage>();
         builder.Services.AddTransient<DetailViewModel>();
 
+        builder.Services.AddTransient<ConnectionTestPage>();
+        builder.Services.AddTransient<ConnectionTestViewModel>();
+
 #if DEBUG
         builder.Logging.AddDebug();
 #endif

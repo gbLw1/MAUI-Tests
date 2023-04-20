@@ -17,8 +17,6 @@ public partial class DetailPage : ContentPage
     {
         base.OnAppearing();
 
-        _ViewModel.ButtonVisible = _ViewModel.Id != 0;
-
         _ViewModel.GetTodoCommand.Execute(null);
     }
 }

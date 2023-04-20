@@ -13,9 +13,6 @@ public partial class DetailViewModel : ObservableObject
     [ObservableProperty]
     string description;
 
-    [ObservableProperty]
-    bool buttonVisible;
-
     [RelayCommand]
     public async Task GetTodo()
     {
@@ -23,7 +20,7 @@ public partial class DetailViewModel : ObservableObject
 
         if (todo is null)
         {
-            await Shell.Current.DisplayAlert("Error", "Not found", "Ok");
+            await Shell.Current.DisplayAlert("Ops", "Ocorreu um erro e não foi possível encontrar a anotação", "OK");
 
             Description = "¯\\_(ツ)_/¯";
             return;
@@ -33,7 +30,7 @@ public partial class DetailViewModel : ObservableObject
     }
 
     [RelayCommand]
-    async Task GoBack()
+    async Task Voltar()
     {
         await Shell.Current.GoToAsync("..");
     }

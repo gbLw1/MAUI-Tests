@@ -4,9 +4,10 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:models="clr-namespace:MauiTodoList.Models"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
     xmlns:viewmodel="clr-namespace:MauiTodoList.ViewModel"
-    x:DataType="viewmodel:MainViewModel"
-    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit">
+    Title="My Notes"
+    x:DataType="viewmodel:MainViewModel">
 
     <!--
         Layout: 3 linhas 2 colunas
@@ -30,24 +31,25 @@
         <Image
             Grid.ColumnSpan="2"
             BackgroundColor="Transparent"
-            Source="logo" />
+            Source="task" />
 
         <Entry
             Grid.Row="1"
-            Placeholder="Enter task"
+            FontSize="Medium"
+            Placeholder="Digite sua anotação"
             Text="{Binding Text}" />
 
-        <BoxView
+        <!--<BoxView
             Grid.Row="1"
             BackgroundColor="Gray"
             HeightRequest="0.8"
-            VerticalOptions="End" />
+            VerticalOptions="End" />-->
 
         <Button
             Grid.Row="1"
             Grid.Column="1"
             Command="{Binding AddCommand}"
-            Text="Add" />
+            Text="Adicionar" />
 
         <CollectionView
             Grid.Row="2"
