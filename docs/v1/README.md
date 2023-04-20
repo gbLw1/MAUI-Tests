@@ -1,45 +1,46 @@
 # Telas da aplicação na primeira versão (v1)
 
-![Splash](./screenshots/splash.png)
+![Splash](./screenshots/splash.png)  
 (Splash Screen da aplicação)
   
 ---
 
-![Home](./screenshots/home.png)
+![Home](./screenshots/home.png)  
 (Tela inicial da aplicação)
 
 ---
 
-![Menu](./screenshots/menu.png)
+![Menu](./screenshots/menu.png)  
+(Menu da aplicação)
 
 ---
 
-![Error - input empty](./screenshots/error-input-empty.png)
+![Error - input empty](./screenshots/error-input-empty.png)  
 (Tela de erro ao tentar adicionar uma tarefa sem título)
 
 ---
 
-![Error - no internet connection](./screenshots/error-no-internet-connection.png)
+![Error - no internet connection](./screenshots/error-no-internet-connection.png)  
 (Tela de erro ao tentar adicionar uma tarefa sem conexão com a internet)
 
 ---
 
-![Add task](./screenshots/add-task.png)
+![Add task](./screenshots/add-task.png)  
 (Tarefa adicionada com sucesso)
 
 ---
 
-![Details page](./screenshots/details-page.png)
+![Details page](./screenshots/details-page.png)  
 (Página de detalhes de uma tarefa)
 
 ---
 
-![Swipe to delete](./screenshots/swipe-to-delete.png)
+![Swipe to delete](./screenshots/swipe-to-delete.png)  
 (Deslizar para deletar uma tarefa)
 
 ---
 
-![Delete task](./screenshots/delete-task.png)
+![Delete task](./screenshots/delete-task.png)  
 (Modal de confirmação para deletar uma tarefa)
 
 ---
