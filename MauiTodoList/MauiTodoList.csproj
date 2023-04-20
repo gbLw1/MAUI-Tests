@@ -51,12 +51,9 @@
 	</ItemGroup>
 
 	<ItemGroup>
-	  <None Remove="Resources\AppIcon\task2.png" />
-	  <None Remove="Resources\Splash\task2.png" />
-	</ItemGroup>
-
-	<ItemGroup>
-	  <MauiImage Include="Resources\Splash\task2.png" />
+	  <None Remove="Platforms\Android\Resources\values-night\colors.xml" />
+	  <None Remove="Platforms\Android\Resources\values-night\styles.xml" />
+	  <None Remove="Platforms\Android\Resources\values\styles.xml" />
 	</ItemGroup>
 
 	<ItemGroup>

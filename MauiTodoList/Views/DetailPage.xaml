@@ -4,7 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:viewmodel="clr-namespace:MauiTodoList.ViewModel"
-    Title="Detalhes"
+    Title="Sponsored by gbL"
     x:DataType="viewmodel:DetailViewModel">
 
     <Grid Padding="20" RowDefinitions="*,Auto,*, Auto">
@@ -19,6 +19,8 @@
         <Button
             Grid.Row="3"
             Command="{Binding VoltarCommand}"
+            FontSize="Medium"
+            MinimumHeightRequest="50"
             Text="Voltar" />
     </Grid>
 

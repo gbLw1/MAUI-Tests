@@ -1,4 +1,6 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using CommunityToolkit.Maui.Alerts;
+using CommunityToolkit.Maui.Core;
+using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using MauiTodoList.Models;
 using MauiTodoList.Services;
@@ -54,7 +56,11 @@ public partial class MainViewModel : ObservableObject
 
         foreach (var todo in todos)
         {
-            Todos.Add(todo);
+            Todos.Add(new Todo
+            {
+                Id = todo.Id,
+                Description = todo.Description.Length > 30 ? $"{todo.Description[..30]}..." : todo.Description,
+            });
         }
 
     }
@@ -64,7 +70,7 @@ public partial class MainViewModel : ObservableObject
     {
         if (string.IsNullOrWhiteSpace(Text))
         {
-            await Shell.Current.DisplayAlert("Ops", "Você precisa digitar algo para adicionar", "Ok");
+            await Shell.Current.DisplayAlert("Ops", "Você precisa digitar algo para adicionar.", "Ok");
             return;
         }
 
@@ -75,19 +81,17 @@ public partial class MainViewModel : ObservableObject
 
         await GetTodoList();
 
+        var toast = Toast.Make(
+            message: "Dica: arraste para o lado para excluir uma tarefa",
+            duration: ToastDuration.Short);
+        await toast.Show();
+
         Text = string.Empty;
     }
 
     [RelayCommand]
     async Task Delete(Todo todoModel)
     {
-        var result = await Shell.Current.DisplayAlert("Delete", $"Você tem certeza que deseja deletar \"{todoModel.Description}\"?", "Sim", "Não");
-
-        if (!result)
-        {
-            return;
-        }
-
         await TodoService.DeleteTodo(todoModel.Id);
 
         var todo = Todos.FirstOrDefault(t => t.Id == todoModel.Id);

@@ -1,6 +1,4 @@
-﻿using CommunityToolkit.Maui.Alerts;
-using CommunityToolkit.Maui.Core;
-using MauiTodoList.ViewModel;
+﻿using MauiTodoList.ViewModel;
 
 namespace MauiTodoList;
 
@@ -25,14 +23,9 @@ public partial class MainPage : ContentPage
         BindingContext = vm;
     }
 
-    protected override async void OnAppearing()
+    protected override void OnAppearing()
     {
         base.OnAppearing();
-
-        var toast = Toast.Make(
-            message: "Dica: Arraste para o lado para excluir uma tarefa",
-            duration: ToastDuration.Long);
-        await toast.Show();
 
         _ViewModel.GetTodoListCommand.Execute(null);
     }
